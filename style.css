@@ -1,0 +1,549 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: orangered;
+}
+
+#logo {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo {
+    color: whitesmoke;
+    font-size: 1.7rem;
+}
+
+.cent {
+    color: rgba(245, 245, 245, 0.829);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+
+
+
+.filterContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid  gray;
+    border-bottom: 1px solid  gray;
+    width: 100%;
+}
+
+.priority{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+
+p{
+    font-size: 1.7rem;
+}
+
+h3{
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    margin: 20px;
+}
+
+h4{
+    color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.status{
+    margin-top: 30px;
+    width: 100%;
+}
+
+#profile{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FFDE42;
+}
+
+.profileWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+
+    
+
+  #overLay{
+    width: 100%;
+    display: flex;
+  }
+
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 120px;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px rgb(189, 187, 187);
+    border-radius: 10%;
+  }
+  #total, #high, #progress, #comp{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111844;
+  }
+
+  h2{
+    font-size: small;
+    color: blueviolet;
+  }
+
+  .sideBar{
+    height: 100vh;
+  }
+
+  #tasks-render{
+    width: 95%;
+    margin-top: 30px;
+    margin: 0 auto;
+  }
+
+  #tasks-render > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    background-color: whitesmoke;
+    align-items: center;
+  }
+
+  table{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  
+
+  #prio{
+    color: orangered;
+    font-size: small;
+    text-align: center;
+  }
+
+  #ti{
+    font-size: medium;
+    color: #111844;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  #date{
+    color: gray;
+    text-align: center;
+    font-size: large;
+  }
+
+
+  #actions{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .task{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    margin-top: 30px;
+    
+  }
+
+
+  #taskContainer{
+    padding-top: 20px;
+    padding: 5px;
+    padding-bottom: 20px;
+    width: 95%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 5px 5px  5px gray;
+  }
+
+  .add{
+    font-size: x-large;
+    color: #111844;
+    text-align: start;
+    margin: 10px;
+  }
+
+  .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.filterBtn {
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.filterBtn.active {
+  background-color: #111844;
+  color: white;
+  border-color: #111844;
+}
+
+.but{
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 13px;
+}
+
+  #title{
+    width: 53%;
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: medium;
+    padding: 5px;
+  }
+
+  #priority{
+
+    width: 30%;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: medium;
+    padding: 5px;
+
+  }
+
+  #createPrio{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  option{
+    background-color: #111844;
+    color: whitesmoke;
+    font-size: medium;
+  }
+
+  #addtask{
+    background-color: white;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 7px 7px;
+    border-radius: 50%;
+    border: 2px solid #8100D1;
+    transition: all 0.3s;
+
+  }
+
+    #addtask:hover{
+    background-color: #8100D1;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 10px 10px;
+    border-radius: 50%;
+    border: 2px solid #111844;
+    cursor: pointer;
+
+  }
+
+  .check{
+    accent-color: #9AE66E;
+  }
+
+  #font{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  
+ 
+
+  @media  (max-width : 2560px) {
+   .sideBar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #111844;
+  width: 33%;
+  height: 100vh;
+  
+
+
+}
+
+#taskWrapper{
+    
+    width: 100%;
+
+  }
+
+  #container{
+    width: 100%;
+  }
+
+  #open{
+    display: none;
+  }
+
+  #close{
+    display: none;
+  }
+  }
+
+
+@media  (max-width : 768px) {
+    
+
+#taskWrapper{
+    flex: 1;
+    width: 100%;
+    transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 0;
+  }
+
+.sideBar.open {
+  transform: translateX(0); /* slides into view */
+}
+    .sideBar {
+  width: 240px;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  height: 100%;
+  }
+
+  #open {
+    display: block;
+  }
+
+      #close{
+        display: block;
+    }
+
+    #total, #high, #progress, #comp{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111844;
+  }
+
+  h2{
+    font-size: small;
+    color: blueviolet;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  option{
+    background-color: #111844;
+    color: whitesmoke;
+    font-size: medium;
+  }
+
+  #priority{
+
+    width: 30%;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: medium;
+    padding: 5px;
+
+  }
+
+
+  #title{
+    width: 53%;
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: medium;
+    padding: 5px;
+  }
+
+
+    #addtask{
+    background-color: white;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 7px 7px;
+    border-radius: 50%;
+    border: 2px solid #8100D1;
+    transition: all 0.3s;
+
+  }
+
+    #ti{
+    font-size: medium;
+    color: #111844;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+    #date{
+    color: gray;
+    text-align: center;
+    font-size: medium;
+  }
+
+    #prio{
+    color: orangered;
+    font-size: medium;
+    text-align: center;
+  }
+
+}
+
+@media (max-width : 480px) {
+    #open{
+
+        width: fit-content;
+    }
+
+
+        #close{
+        display: block;
+    }
+
+     .sideBar {
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100%;
+  }
+
+  #total, #high, #progress, #comp{
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #111844;
+  }
+
+  option{
+    background-color: #111844;
+    color: whitesmoke;
+    font-size: xx-small;
+  }
+
+  h2{
+    font-size: small;
+    color: blueviolet;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  #priority{
+
+    width: 40%;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: x-small;
+    padding: 1px;
+
+  }
+
+  #title{
+    width: 50%;
+    height: 35px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #111844;
+    font-size: small;
+    padding: 3px;
+  }
+
+    #addtask{
+    background-color: white;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 3px 3px;
+    border-radius: 50%;
+    border: 2px solid #8100D1;
+    transition: all 0.3s;
+    width: 30px;
+    height: 30px;
+  }
+
+    #ti{
+    font-size: xx-small;
+    color: #111844;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+    #date{
+    color: gray;
+    text-align: center;
+    font-size: x-small;
+  }
+
+    #prio{
+    color: orangered;
+    font-size: xx-small;
+    text-align: center;
+  }
+}
