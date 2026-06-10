@@ -1,4 +1,5 @@
 let allTasks = []; 
+const apiUrl = "https://task-manager-chln.onrender.com/api/tasks"
 let currentFilter = 'all';
 let editingTaskId = null;
 const input = document.getElementById("title");
@@ -25,7 +26,7 @@ async function addTask() {
         return;
     }
 
-    await fetch("http://localhost:3000/api/tasks" , {
+    await fetch(apiUrl , {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -46,7 +47,7 @@ async function loadTask() {
 
     try{
 
-    const response = await fetch("http://localhost:3000/api/tasks");
+    const response = await fetch(apiUrl);
     if (!response.ok) {
             console.log("faild to fetch data")
             return;
@@ -201,7 +202,7 @@ document.querySelectorAll('.filterBtn').forEach(btn => {
 
 async function deleteTask(id) { 
     try {
-    const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+    const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}`, {
       method: "DELETE"
     });
 
@@ -224,7 +225,7 @@ async function deleteTask(id) {
 
 async function toggleTask(id) {
   try {
-    const response = await fetch(`http://localhost:3000/api/tasks/${id}/toggle`, {
+    const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}/toggle`, {
       method: 'PATCH'
     });
 
@@ -262,7 +263,7 @@ function editTask(id, title, priority) {
   priorityInput.value = priority;
 
   
-  button.innerHTML =`<svg xmlns="http://www.w3.org/2000/svg" id="addtask" height="50" width="50" viewBox="0 0 640 640"><path fill="#111844" d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>`;
+//   button.innerHTML =`<svg xmlns="http://www.w3.org/2000/svg" id="addtask" height="50" width="50" viewBox="0 0 640 640"><path fill="#111844" d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>`;
 }
 
 async function updateTask(id) {
@@ -274,7 +275,7 @@ async function updateTask(id) {
     try{
 
      
-        const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+        const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}`, {
             method : "PUT",
             headers : {"Content-Type": "application/json"},
 
@@ -288,7 +289,7 @@ async function updateTask(id) {
             return;
         }
 
-        button.textContent = `<svg xmlns="http://www.w3.org/2000/svg" id="addtask" height="50" width="50" viewBox="0 0 640 640"><path fill="#111844" d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>`;
+        // button.textContent = `<svg xmlns="http://www.w3.org/2000/svg" id="addtask" height="50" width="50" viewBox="0 0 640 640"><path fill="#111844" d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>`;
         input.value = "";
         priorityInput.value = "-- Choose a priority --";
 

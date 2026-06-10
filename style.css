@@ -432,6 +432,17 @@ h4{
 
   }
 
+      #addtask:hover{
+    background-color: #8100D1;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 10px 10px;
+    border-radius: 50%;
+    border: 2px solid #111844;
+    cursor: pointer;
+
+  }
+
     #ti{
     font-size: medium;
     color: #111844;
@@ -526,6 +537,17 @@ h4{
     transition: all 0.3s;
     width: 30px;
     height: 30px;
+  }
+
+      #addtask:hover{
+    background-color: #8100D1;
+    color: whitesmoke ;
+    font-size: large;
+    padding: 5px 5px;
+    border-radius: 50%;
+    border: 2px solid #111844;
+    cursor: pointer;
+
   }
 
     #ti{
