@@ -5,20 +5,25 @@ const taskRoutes = require("./src/Routes/taskRouters");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://task-manager-xi-two-56.vercel.app/' // ✅ update with your Vercel URL
+}));
 app.use(express.json());
 
 // API routes first
 app.use("/api/tasks", taskRoutes);
 
-// Serve frontend files
-app.use(express.static(__dirname));
+// Serve frontend
+app.use(express.static(path.join(__dirname)));
 
-// Home route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// ❌ REMOVE app.listen()
+// ✅ start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app;
