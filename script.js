@@ -1,5 +1,5 @@
 let allTasks = []; 
-const apiUrl = "https://task-manager-chln.onrender.com/api/tasks"
+const apiUrl = "https://task-manager-chln.onrender.com/api/tasks";
 let currentFilter = 'all';
 let editingTaskId = null;
 const input = document.getElementById("title");
@@ -202,7 +202,7 @@ document.querySelectorAll('.filterBtn').forEach(btn => {
 
 async function deleteTask(id) { 
     try {
-    const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}`, {
+    const response = await fetch(`${apiUrl}/${id}`, {
       method: "DELETE"
     });
 
@@ -225,7 +225,7 @@ async function deleteTask(id) {
 
 async function toggleTask(id) {
   try {
-    const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}/toggle`, {
+    const response = await fetch(`${apiUrl}/${id}/toggle`, {
       method: 'PATCH'
     });
 
@@ -275,7 +275,7 @@ async function updateTask(id) {
     try{
 
      
-        const response = await fetch(`https://task-manager-chln.onrender.com/api/tasks/${id}`, {
+        const response = await fetch(`${apiUrl}/${id}`, {
             method : "PUT",
             headers : {"Content-Type": "application/json"},
 
